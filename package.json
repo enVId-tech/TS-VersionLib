@@ -1,0 +1,42 @@
+{
+  "name": "ts-version-lib",
+  "version": "25.09.03-dev.3",
+  "description": "A TypeScript/JavaScript versioning library that generates build versions based on date and git commits",
+  "main": "generate-version.js",
+  "bin": {
+    "ts-version": "./version-cli.js",
+    "version-gen": "./version-cli.js"
+  },
+  "scripts": {
+    "version:dev": "node version-cli.js dev",
+    "version:beta": "node version-cli.js beta",
+    "version:release": "node version-cli.js release",
+    "generate-version": "node generate-version.js",
+    "help": "node version-cli.js --help"
+  },
+  "keywords": [
+    "version",
+    "versioning",
+    "build",
+    "typescript",
+    "javascript",
+    "git",
+    "semantic-versioning",
+    "cli"
+  ],
+  "author": "enVId-tech",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/enVId-tech/TS-VersionLib.git"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "generate-version.js",
+    "version-cli.js",
+    "README.md",
+    "LICENSE"
+  ]
+}
