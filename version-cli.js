@@ -5,7 +5,9 @@
  * A convenient command-line interface for generating version numbers
  * 
  * Usage:
- *   node version-cli.js [version-type]
+ *   ts-version [version-type]         # If installed globally
+ *   npx ts-version [version-type]     # If installed locally
+ *   node version-cli.js [version-type] # Direct execution
  *   
  * Version types:
  *   dev      - Development version (default)
@@ -13,10 +15,11 @@
  *   release  - Production release version
  * 
  * Examples:
- *   node version-cli.js          # Generates dev version
- *   node version-cli.js dev      # Generates dev version
- *   node version-cli.js beta     # Generates beta version
- *   node version-cli.js release  # Generates release version
+ *   ts-version               # Generates dev version
+ *   ts-version dev           # Generates dev version
+ *   ts-version beta          # Generates beta version
+ *   ts-version release       # Generates release version
+ *   npx ts-version beta      # Using npx
  */
 
 const path = require('path');
@@ -45,7 +48,9 @@ function showHelp() {
   console.log('A convenient command-line interface for generating version numbers');
   console.log('');
   console.log(colorize('Usage:', 'yellow'));
-  console.log('  node version-cli.js [version-type]');
+  console.log('  ts-version [version-type]         # If installed globally');
+  console.log('  npx ts-version [version-type]     # If installed locally');
+  console.log('  node version-cli.js [version-type] # Direct execution');
   console.log('');
   console.log(colorize('Version Types:', 'yellow'));
   console.log('  dev      - Development version (default)');
@@ -53,10 +58,14 @@ function showHelp() {
   console.log('  release  - Production release version');
   console.log('');
   console.log(colorize('Examples:', 'yellow'));
-  console.log('  node version-cli.js          # Generates dev version');
-  console.log('  node version-cli.js dev      # Generates dev version');
-  console.log('  node version-cli.js beta     # Generates beta version');
-  console.log('  node version-cli.js release  # Generates release version');
+  console.log('  ts-version               # Generates dev version');
+  console.log('  ts-version dev           # Generates dev version');
+  console.log('  ts-version beta          # Generates beta version');
+  console.log('  ts-version release       # Generates release version');
+  console.log('  npx ts-version beta      # Using npx');
+  console.log('');
+  console.log(colorize('Alternative commands:', 'yellow'));
+  console.log('  version-gen              # Same as ts-version');
   console.log('');
   console.log(colorize('Options:', 'yellow'));
   console.log('  --help, -h    Show this help message');

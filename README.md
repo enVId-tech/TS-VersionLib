@@ -13,36 +13,112 @@ A TypeScript/JavaScript versioning library that generates build versions based o
 
 ## Installation
 
-### Global Installation (Recommended)
+### Global Installation (Recommended for CLI usage)
 ```bash
 npm install -g ts-version-lib
 ```
 
-### Local Installation
+After global installation, you can use the `ts-version` or `version-gen` commands from anywhere:
+```bash
+ts-version dev
+ts-version beta
+ts-version release
+```
+
+### Local Installation (For project-specific usage)
 ```bash
 npm install ts-version-lib
 ```
 
-## Quick Start
-
-### Using the CLI Tool
-
-The easiest way to use TS-VersionLib is through the command-line interface:
-
+With local installation, use `npx` to run the CLI:
 ```bash
-# Generate a development version
-node version-cli.js dev
-# or just
-node version-cli.js
+npx ts-version dev
+npx ts-version beta
+npx ts-version release
+```
 
-# Generate a beta version
-node version-cli.js beta
+### Development Installation
+```bash
+npm install --save-dev ts-version-lib
+```
 
-# Generate a release version
-node version-cli.js release
+## CLI Commands
+
+After installation, you have access to these commands:
+
+### Primary Commands
+- `ts-version` - Main CLI command
+- `version-gen` - Alternative CLI command (same functionality)
+
+### Command Usage
+```bash
+# Generate development version (default)
+ts-version
+ts-version dev
+
+# Generate beta version
+ts-version beta
+
+# Generate release version  
+ts-version release
 
 # Show help
-node version-cli.js --help
+ts-version --help
+ts-version -h
+
+# Show version info
+ts-version --version
+ts-version -v
+```
+
+### Using with npx (local installation)
+```bash
+npx ts-version dev
+npx ts-version beta
+npx ts-version release
+npx ts-version --help
+```
+
+## Quick Start
+
+### Using the CLI Tool (Recommended)
+
+After installation, you can use the CLI tool with simple commands:
+
+#### Global Installation Usage
+```bash
+# Generate a development version
+ts-version
+# or
+ts-version dev
+
+# Generate a beta version
+ts-version beta
+
+# Generate a release version
+ts-version release
+
+# Show help
+ts-version --help
+```
+
+#### Local Installation Usage
+```bash
+# Generate versions using npx
+npx ts-version dev
+npx ts-version beta
+npx ts-version release
+
+# Show help
+npx ts-version --help
+```
+
+#### Alternative Commands
+You can also use the `version-gen` command as an alternative:
+```bash
+version-gen dev
+version-gen beta
+version-gen release
 ```
 
 ### Using npm Scripts
@@ -75,6 +151,20 @@ updatePackageVersion(version);
 
 // Create TypeScript version file
 createVersionFile(version);
+```
+
+### Direct File Usage (Advanced)
+
+If you need to use the files directly (for development or custom integration):
+
+```bash
+# Direct execution of the CLI
+node version-cli.js dev
+node version-cli.js beta
+node version-cli.js release
+
+# Direct execution of the core module
+node generate-version.js dev
 ```
 
 ## Version Format

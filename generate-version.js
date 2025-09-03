@@ -70,7 +70,7 @@ function generateBuildVersion(version) {
  * Updates the version in package.json
  */
 function updatePackageVersion(version) {
-  const packagePath = path.join(__dirname, 'package.json');
+  const packagePath = path.join(process.cwd(), 'package.json');
 
   try {
     const packageJson = JSON.parse(fs.readFileSync(packagePath, 'utf8'));
@@ -89,7 +89,7 @@ function updatePackageVersion(version) {
  * Creates or updates a version.ts file with build information
  */
 function createVersionFile(version) {
-  const versionFilePath = path.join(__dirname, 'src', 'version.ts');
+  const versionFilePath = path.join(process.cwd(), 'src', 'version.ts');
 
   const now = new Date();
   const buildDate = now.toISOString();

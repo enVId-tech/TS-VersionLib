@@ -1,6 +1,6 @@
 {
   "name": "ts-version-lib",
-  "version": "25.09.03-dev.3",
+  "version": "25.09.03-beta.5",
   "description": "A TypeScript/JavaScript versioning library that generates build versions based on date and git commits",
   "main": "generate-version.js",
   "bin": {
